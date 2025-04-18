@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LearnSquare - Login</title>
+    <style>
+        body {
+            background: #f0f4ff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-container {
+            background: white;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 300px;
+            position: relative;
+        }
+
+        .login-container img {
+            width: 80px;
+            margin-bottom: 15px;
+        }
+
+        .login-container h2 {
+            margin-bottom: 25px;
+            color: #2a2a2a;
+        }
+
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        .password-wrapper {
+            position: relative;
+        }
+
+        .password-wrapper input {
+            padding-right: 12px;
+        }
+
+        .password-wrapper .toggle-eye {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+
+        .btn-group button {
+            flex: 1;
+            margin: 0 5px;
+            padding: 10px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .btn-submit {
+            background-color: #5e60ce;
+            color: white;
+        }
+
+        .btn-submit:hover {
+            background-color: #4b4bc5;
+        }
+
+        .btn-cancel {
+            background-color: #ccc;
+            color: black;
+        }
+
+        .btn-cancel:hover {
+            background-color: #b3b3b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <img src="https://media.licdn.com/dms/image/v2/D560BAQGZMtltalvkuQ/company-logo_200_200/company-logo_200_200/0/1736269981721/learnsquaretechnologies_logo?e=2147483647&v=beta&t=l1uyD_GoPdOFq1uSiDtUPpr7RYK4F6Hip-Iyrenuuos" alt="LearnSquare Logo">
+        <h2>LearnSquare Login</h2>
+
+        <form>
+            <input type="text" placeholder="Login ID" required>
+
+            <div class="password-wrapper">
+                <input type="password" id="password" placeholder="Password" required>
+                <span class="toggle-eye" onclick="togglePassword()">👁️</span>
+            </div>
+
+            <div class="btn-group">
+                <button type="submit" class="btn-submit">Submit</button>
+                <button type="button" class="btn-cancel" onclick="clearForm()">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function togglePassword() {
+            const passwordInput = document.getElementById("password");
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+            } else {
+                passwordInput.type = "password";
+            }
+        }
+
+        function clearForm() {
+            document.querySelector("form").reset();
+        }
+    </script>
+</body>
+</html>
